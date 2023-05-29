@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   const [activebar, setActiveBar] = useState("All");
@@ -47,26 +48,13 @@ export default function App() {
     <main>
       <h1>#todo</h1>
       <Navbar activebar={activebar} changeMenu={changeMenu} />
-      <div className="searchBar">
-        <input type="text" onBlur={(e) => setTodo(e.target.value)} />
+      {activebar === "Completed" ? <></> : <div className="searchBar">
+        <input type="text" onBlur={(e) => setTodo(e.target.value)} placeholder="Add Details" />
         <button className="searchButton" onClick={submitTodo}>
           Add
         </button>
-      </div>
-      <div className="todo_items">
-        {localItems.map((item) => {
-          return (
-            <div key={item.id} className="todo_list">
-              <input
-                type="checkbox"
-                checked={item.active === false}
-                onChange={() => handleChange(item.id, item.active === false)}
-              />
-              {item.active ? <span>{item.to_do}</span> : <s>{item.to_do}</s>}
-            </div>
-          );
-        })}
-      </div>
+      </div>}
+        <TodoList localItems={localItems} handleChange={handleChange} type={activebar} />
     </main>
   );
 }

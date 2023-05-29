@@ -31,7 +31,7 @@ input[type="text"]{
 .searchBar{
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  margin-top: 10px;
   gap: 10px;
 }
 
@@ -44,6 +44,7 @@ input[type="text"]{
   width: 5rem;
 }
 .todo_items{
+  margin-top: 10px;
   margin-left: -450px;
 }
 .todo_list{
