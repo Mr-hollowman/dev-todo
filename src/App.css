@@ -3,6 +3,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 750px;
 }
 nav{
   display: flex;
@@ -20,4 +21,25 @@ nav > span{
   width: 90px;
   border-bottom: 4px solid #2F80ED;
   border-radius: 4px 4px 0px 0px;
+}
+
+input{
+  width: 30rem;
+  border-radius: 10px;
+  border: 1px solid #BDBDBD;
+}
+.searchBar{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 10px;
+}
+
+.searchButton{
+  color: #ffffff;
+  background-color: #2F80ED;
+  padding: 10px;
+  border-radius: 12px;
+  border: 0;
+  width: 5rem;
 }

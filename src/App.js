@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [activebar, setActiveBar] = useState("All");
+  const [todo, setTodo] = useState("");
 
   const changeMenu = (e) => {
     setActiveBar(e.target.innerText);
   };
-  console.log(activebar);
   return (
     <main>
       <h1>#todo</h1>
-      <nav>
-        <span className={activebar === "All" ? "active":""} onClick={changeMenu}>
-          All
-        </span>
-        <span className={activebar === "Active" ? "active":""}  onClick={changeMenu}>Active</span>
-        <span className={activebar === "Completed" ? "active":""}  onClick={changeMenu}>Completed</span>
-      </nav>
+      <Navbar activebar={activebar} changeMenu={changeMenu} />
+      <div className="searchBar">
+        <input type="text" onChange={(e) => setTodo(e.target.value)} />
+        <button className="searchButton">Add</button>
+      </div>
     </main>
   );
 }
