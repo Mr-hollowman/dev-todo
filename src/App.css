@@ -16,6 +16,7 @@ nav > span {
   width: 90px;
   padding: 15px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 .active {
   width: 90px;
