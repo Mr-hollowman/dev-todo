@@ -6,6 +6,7 @@ export default function TodoList({
   type,
   handleDelete,
 }) {
+    var isEmpty = false; 
   return (
     <div className="todo_items">
       {localItems
@@ -13,12 +14,17 @@ export default function TodoList({
           type === "All" ? item : type === "Active" ? item.active : !item.active
         )
         .map((item) => {
+          if (type === "Completed" && item.length !== 0) {
+            isEmpty = true;
+          } else {
+            isEmpty = false;
+          }
           return (
             <div key={item.id} className="todo_list">
               <input
                 type="checkbox"
                 checked={item.active === false}
-                onChange={() => handleChange(item.id, item.active === false)}
+                onChange={() => type !== "Completed" && handleChange(item.id, item.active === false)}
               />
               {item.active ? <span>{item.to_do}</span> : <s>{item.to_do}</s>}
               {type === "Completed" && (
@@ -32,6 +38,7 @@ export default function TodoList({
             </div>
           );
         })}
+      {type === "Completed" && isEmpty && <button onClick={()=>handleDelete("DeleteAll")}>Delete All</button>}
     </div>
   );
 }
