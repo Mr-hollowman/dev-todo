@@ -23,7 +23,7 @@ nav > span{
   border-radius: 4px 4px 0px 0px;
 }
 
-input{
+input[type="text"]{
   width: 30rem;
   border-radius: 10px;
   border: 1px solid #BDBDBD;
@@ -42,4 +42,10 @@ input{
   border-radius: 12px;
   border: 0;
   width: 5rem;
+}
+.todo_items{
+  margin-left: -450px;
+}
+.todo_list{
+  padding: 5px;
 }
