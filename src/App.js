@@ -29,18 +29,15 @@ export default function App() {
   };
 
   const handleChange = (id, bool) => {
-    console.log(id, "id");
     setLocalItems((prev) => {
       var changedEle = prev.map((item) => {
         if (item.id == id) {
           item.active = bool;
-          console.log(item, "after change");
           return item;
         } else {
           return item;
         }
       });
-      console.log(changedEle, "before return");
       return [...changedEle];
     });
   };
@@ -48,13 +45,25 @@ export default function App() {
     <main>
       <h1>#todo</h1>
       <Navbar activebar={activebar} changeMenu={changeMenu} />
-      {activebar === "Completed" ? <></> : <div className="searchBar">
-        <input type="text" onBlur={(e) => setTodo(e.target.value)} placeholder="Add Details" />
-        <button className="searchButton" onClick={submitTodo}>
-          Add
-        </button>
-      </div>}
-        <TodoList localItems={localItems} handleChange={handleChange} type={activebar} />
+      {activebar === "Completed" ? (
+        <></>
+      ) : (
+        <div className="searchBar">
+          <input
+            type="text"
+            onBlur={(e) => setTodo(e.target.value)}
+            placeholder="Add Details"
+          />
+          <button className="searchButton" onClick={submitTodo}>
+            Add
+          </button>
+        </div>
+      )}
+      <TodoList
+        localItems={localItems}
+        handleChange={handleChange}
+        type={activebar}
+      />
     </main>
   );
 }
