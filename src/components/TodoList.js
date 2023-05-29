@@ -38,7 +38,7 @@ export default function TodoList({
             </div>
           );
         })}
-      {type === "Completed" && isEmpty && <button onClick={()=>handleDelete("DeleteAll")}>Delete All</button>}
+      {type === "Completed" && isEmpty && <button className="deleteButton" onClick={()=>handleDelete("DeleteAll")}>Delete All</button>}
     </div>
   );
 }

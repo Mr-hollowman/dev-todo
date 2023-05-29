@@ -1,52 +1,61 @@
-main{
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 750px;
 }
-nav{
+nav {
   display: flex;
   gap: 100px;
-  border-bottom: 1px solid #BDBDBD;
+  border-bottom: 1px solid #bdbdbd;
   padding-left: 50px;
   padding-right: 50px;
 }
-nav > span{
+nav > span {
   width: 90px;
   padding: 15px;
   text-align: center;
 }
-.active{
+.active {
   width: 90px;
-  border-bottom: 4px solid #2F80ED;
+  border-bottom: 4px solid #2f80ed;
   border-radius: 4px 4px 0px 0px;
 }
 
-input[type="text"]{
+input[type="text"] {
   width: 30rem;
   border-radius: 10px;
-  border: 1px solid #BDBDBD;
+  border: 1px solid #bdbdbd;
 }
-.searchBar{
+.searchBar {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   gap: 10px;
 }
 
-.searchButton{
+.searchButton {
   color: #ffffff;
-  background-color: #2F80ED;
+  background-color: #2f80ed;
   padding: 10px;
   border-radius: 12px;
   border: 0;
   width: 5rem;
 }
-.todo_items{
+.todo_items {
   margin-top: 10px;
 }
-.todo_list{
+.todo_list {
   padding: 5px;
   width: 600px;
+}
+.deleteButton {
+  padding: 10px;
+  color: white;
+  background-color: red;
+  float: right;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 10px;
 }
