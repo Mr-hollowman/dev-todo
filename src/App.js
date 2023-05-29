@@ -31,7 +31,7 @@ export default function App() {
   const handleChange = (id, bool) => {
     setLocalItems((prev) => {
       var changedEle = prev.map((item) => {
-        if (item.id == id) {
+        if (item.id === id) {
           item.active = bool;
           return item;
         } else {
@@ -41,6 +41,33 @@ export default function App() {
       return [...changedEle];
     });
   };
+
+  const handleDelete = (id) => {
+    if (id === "DeleteAll") {
+      setLocalItems((prev) => {
+        var restItems = prev.filter((item) => {
+          if (item.active === false) {
+            return null;
+          } else {
+            return item;
+          }
+        });
+        return restItems;
+      });
+    } else {
+      setLocalItems((prev) => {
+        var restItems = prev.filter((item) => {
+          if (item.id === id) {
+            return null;
+          } else {
+            return item;
+          }
+        });
+        return restItems;
+      });
+    }
+  };
+
   return (
     <main>
       <h1>#todo</h1>
@@ -63,6 +90,7 @@ export default function App() {
         localItems={localItems}
         handleChange={handleChange}
         type={activebar}
+        handleDelete={handleDelete}
       />
     </main>
   );
